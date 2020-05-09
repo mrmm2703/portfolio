@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Megagon</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta name="twitter:widgets:border-color" content="#ffffff">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165942289-1"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/jquery.shadow-animation/1/mainfile"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-165942289-1');
+        </script>
+    </head>
+    <body>
+        <!-- Header -->
+        <div id="header">
+            <div id="header_left_container">
+                <div id="header_title" class="robotoheader">
+                    Megagon
+                </div>
+            </div>
+            <div id="header_right_container">
+                <div id="header_img"></div>
+            </div>
+        </div>
+        <div id="header_block"></div>
+
+        <!-- Quick Details -->
+        <div class="section light">
+            <div class="tech_bar">
+                <img class="tech" src="../../img/python.svg"/>
+            </div>
+            <div class="row1">
+                <div class="light_card id1">
+                    <div class="light_card_header robotoheader">
+                        1,000,000 sides
+                    </div>
+                    <div class="light_card_text roboto">
+                        This started off as a joke with a friend, but then became a reality. It's a very simple Python script which draws polygons using the Python Turtle module. But I pushed it to its limits and drew a megagon, taking just under 18hrs.
+                    </div>
+                </div>
+                <div class="light_card id2">
+                    <div class="light_card_header robotoheader">
+                        What's the point
+                    </div>
+                    <div class="light_card_text roboto">
+                        It's a statement, more than anything. It's supposed to show how computers process things and how they take time and can be really pushed to their limits. I really wanted to see what software was capable of.
+                    </div>
+                </div>
+                <div class="light_card id3">
+                    <div class="light_card_header robotoheader">
+                        My poo shape
+                    </div>
+                    <div class="light_card_text roboto">
+                        Integer ut libero eget tellus volutpat aliquam. Phasellus interdum eu ante vitae suscipit. Cras mauris magna, finibus non nibh ut, aliquet.
+                    </div>
+                </div>
+            </div>
+            <div class="top_buttons">
+                <a href="#video" class="button top_button roboto">WATCH</a>
+                <a href="https://github.com/mrmm2703/megagon" class="button top_button roboto">SOURCE CODE</a>
+            </div>
+        </div>
+        <div class="section dark" id="video">
+            <div class="row1" style="padding-top: 5%; padding-bottom: 5%;">
+                <video class="big_image right" id="big_image1" src="../../../megagon/megagon.mp4" poster="img/screenshot.png" preload="none" controls></video>
+                <div class="big_image_text_container left dark">
+                    <div class="big_image_text_header robotoheader">
+                        All 17 hours
+                    </div>
+                    <div class="big_image_text_text roboto">
+                        I thought I'd go the extra mile and record the entire process, to further stress my computer and so I can look back at this achievement of mine. 
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+    <script>
+            var header_block = document.getElementById("header_block")
+            var header = document.getElementById("header")
+            function setHeaderBlock() {
+                header_block.style.height = header.offsetHeight + "px"
+            }
+            
+            function setImageHeight() {
+                console.log($(".dark_card .img").width())
+                $(".button").css("border-radius", ($(".button").outerHeight() / 2)+"px")
+                $("#big_image1").css("height", ((($("#big_image1").width()) / 16) * 9)+"px")
+                // $("#top_bar_github").css('margin-top', (($("#top_bar").height() - $("#top_bar_github").height()) / 2)+"px")
+            }
+
+            function doSizes() {
+                setHeaderBlock()
+                setImageHeight()
+            }
+
+            doSizes()
+            window.addEventListener("resize", doSizes)
+        </script>
+</html>

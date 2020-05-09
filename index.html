@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Mo Rahman: Portfolio</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165942289-1"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-165942289-1');
+        </script>
+        <!-- UI Scripts -->
+    </head>
+    <body>
+        <!-- <div id="top_bar">
+            <div id="top_bar_github"></div>
+            <div id="top_bar_github_t" class="roboto">@mrmm2703</div>
+            <div id="top_bar_twitter"></div>
+            <div id="top_bar_github_t" class="roboto">@morahman162</div>
+        </div> -->
+        <div id="header">
+            <div id="header_left_container">
+                <div id="header_title" class="robotoheader">
+                    Mo Rahman
+                </div>
+                <div id="header_subtitle" class="roboto">
+                    Coding portfolio
+                </div>
+            </div>
+        </div>
+        <div id="header_block"></div>
+
+        <div class="section light">
+            <div class="row1">
+                <div class="light_card id1">
+                    <div class="light_card_header robotoheader">
+                        My experience
+                    </div>
+                    <div class="light_card_text roboto">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus egestas tristique dignissim. Mauris ullamcorper tempor tellus ac porta.
+                    </div>
+                </div>
+                <div class="light_card id2">
+                    <div class="light_card_header robotoheader">
+                        What I like
+                    </div>
+                    <div class="light_card_text roboto">
+                        Pellentesque eget sollicitudin felis. Nullam sed tempor mauris, elementum efficitur libero. Donec lacus libero, condimentum quis.
+                    </div>
+                </div>
+                <div class="light_card id3">
+                    <div class="light_card_header robotoheader">
+                        My poo shape
+                    </div>
+                    <div class="light_card_text roboto">
+                        Integer ut libero eget tellus volutpat aliquam. Phasellus interdum eu ante vitae suscipit. Cras mauris magna, finibus non nibh ut, aliquet.
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section dark">
+            <div class="row1">
+                <div class="dark_card dc1 id1" id="row2img">
+                    <a href="projects/spotify-party/"><div class="img id1"></div></a>
+                    <div class="dark_card_type">PROJECT</div>
+                    <div class="dark_card_title robotoheader">Spotify Party</div>
+                    <div class="dark_card_text roboto">A project incorporating the Spotify Web Player SDK and Web API to allow people to collectively play music together, live and in sync.</div>
+                    <div class="dark_card_type">APRIL 2020</div>
+                </div>
+                <div class="dark_card dc1 id2">
+                    <a href="projects/pepper/"><div class="img id2"></div></a>
+                    <div class="dark_card_type">PROJECT</div>
+                    <div class="dark_card_title robotoheader">Pepper</div>
+                    <div class="dark_card_text roboto">Using Pepper (a humanoid) to achieve many things, from connecting to APIs such as the dictionary for answering questions to connecting to other hardware around Pepper in the network.</div>
+                    <div class="dark_card_type">DECEMBER 2017</div>
+                </div>
+                <div class="dark_card dc1 id3">
+                    <a href="projects/mental-screen/"><div class="img id3"></div></a>
+                    <div class="dark_card_type">PROJECT</div>
+                    <div class="dark_card_title robotoheader">Mental Screen</div>
+                    <div class="dark_card_text roboto">In partnership with States of Minds, I created an app which tracks students' app usage and lets them compete with each other in teams, as an effort to look into social media detox.</div>
+                    <div class="dark_card_type">FEBRUARY 2020</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section dark">
+            <div class="row1">
+                <div class="dark_card dc2 id1" id="row2img">
+                    <a href="projects/megagon/"><div class="img id1"></div></a>
+                    <div class="dark_card_type">PROJECT</div>
+                    <div class="dark_card_title robotoheader">Megagon</div>
+                    <div class="dark_card_text roboto">Pushing Python Turtles to it's limits! I recorded my computer drawing a megagon (1,000,000 sided polygon). All 18hrs can be watched here!</div>
+                    <div class="dark_card_type">MAY 2020</div>
+                </div>
+                <div class="dark_card dc2 id2">
+                    <a href="projects/shirt-manager/"><div class="img id2"></div></a>
+                    <div class="dark_card_type">PROJECT</div>
+                    <div class="dark_card_title robotoheader">Shirt Manager</div>
+                    <div class="dark_card_text roboto">I'm very fond of shirts. I have so many I can never choose one! So, I created an app to manage all my shirts with NFC tag support, all linked to a MySQL database via an API.</div>
+                    <div class="dark_card_type">DECEMBER 2019</div>
+                </div>
+                <div class="dark_card dc2 id3">
+                    <a href="projects/portfolio"><div class="img id3"></div></a>
+                    <div class="dark_card_type">PROJECT</div>
+                    <div class="dark_card_title robotoheader">Portfolio</div>
+                    <div class="dark_card_text roboto">This portfolio itself was no easy feat! It deserves a spot on my portfolio. I wanted this to be a design focused website to show all my work in a neat, organised manner.</div>
+                    <div class="dark_card_type">MAY 2020</div>
+                </div>
+            </div>
+        </div>
+    </body>
+    <script>
+            var header_block = document.getElementById("header_block")
+            var header = document.getElementById("header")
+            var origMargin
+            var origSize
+            function setHeaderBlock() {
+                header_block.style.height = header.offsetHeight + "px"
+            }
+            
+            function setImageHeight() {
+                console.log($(".dark_card .img").width())
+                $(".dark_card .img").css('height', $(".dark_card .img").width()+"px")
+                $(".dark_card .img").css('margin-top', (($(".dark_card .img").width()/4)*(-1))+"px")
+                origMargin = ($(".dark_card .img").width()/4)*(-1)
+                origSize = $(".dark_card .img").height()
+                $("#top_bar_github").css('width', $("#top_bar_github").height()+"px")
+                $("#top_bar_twitter").css('width', $("#top_bar_github").height()+"px")
+                $("#top_bar_twitter").css('height', ($("#top_bar_twitter").width() / 1.229822835)+"px")
+                // $("#top_bar_github").css('margin-top', (($("#top_bar").height() - $("#top_bar_github").height()) / 2)+"px")
+            }
+
+            function doSizes() {
+                setHeaderBlock()
+                setImageHeight()
+            }
+
+            doSizes()
+            window.addEventListener("resize", doSizes)
+        </script>
+        <script src="animations.js"></script>
+</html>

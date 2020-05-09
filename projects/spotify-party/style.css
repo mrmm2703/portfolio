@@ -1,0 +1,348 @@
+a {
+    text-decoration: none;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+#top_bar {
+    position: absolute;
+    height: 4%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    background-color: #00000055;
+    box-sizing: border-box;
+    z-index: 50;
+    padding-left: 8%;
+    padding-right: 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#top_bar_github {
+    background-image: url("../../img/github.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 60%;
+    display: inline-block;
+}
+
+#top_bar_twitter {
+    margin-left: 1.5em;
+    background-image: url("../../img/twitter.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: inline-block;
+}
+
+#top_bar_github_t {
+    width: auto;
+    display: inline-block;
+    color: white;
+    font-size: 2.5vh;
+    margin-left: 0.75em;
+}
+
+#header {
+    background: url("./img/header.jpg");
+    background-position: bottom;
+    background-repeat: no-repeat;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 20em;
+    width: 100%;
+    position: absolute;
+    background-size: cover;
+    color: white;
+}
+
+#header_left_container {
+    margin-left: 8%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-15%);
+}
+
+#header_right_container {
+    margin-right: 8%;
+    right: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-15%);
+}
+
+#header_img {
+    width: 15em;
+    height: 15em;
+    background-image: url("../../img/spotify-party.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+.robotoheader {
+    font-family: 'Roboto Slab';
+    font-weight: 700;
+}
+
+.roboto {
+    font-family: 'Roboto';
+    font-weight: 300;
+}
+
+#header_title {
+    font-size: 4.5vw;
+}
+
+#header_subtitle {
+    font-size: 1.4vw;
+    text-align: center;
+}
+
+#header_block {
+    width: 100%;
+}
+
+.section {
+    background-color: #F6F7F6;
+    padding-left: 8%;
+    padding-right: 8%;
+    height: auto;
+}
+
+.light {
+    background-color: #F6F7F6;
+}
+
+.dark {
+    background-color: #5E5C6B;
+}
+
+.row1:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.tech_bar {
+    height: 2em;
+    padding-top: 2.5%;
+}
+
+.tech {
+    height: 100%;
+}
+
+.tech:not(:first-child) {
+    height: 100%;
+    margin-left: 1em;
+}
+
+.top_buttons {
+    padding-bottom: 2.5%;
+}
+
+.button {
+    border-radius: 100%;
+    padding-left: 1.5%;
+    padding-right: 1.5%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    color: white;
+    font-weight: 400;
+    font-size: 12px;
+    display: inline-block;
+    background-color: #A99178;
+    box-shadow: 0 2px 2px 0 rgba(153, 153, 153, 0.14), 0 3px 1px -2px rgba(153, 153, 153, 0.2), 0 1px 5px 0 rgba(153, 153, 153, 0.12);
+}
+
+.button:not(:first-child) {
+    margin-left: 2em;
+}
+
+.row1 {
+    padding-top: 2.5%;
+    padding-bottom: 2.5%;
+}
+
+.light_card {
+    float: left;
+    width: 33.33%;
+    box-sizing: border-box;
+}
+
+.light_card.id1 {
+    padding-right: 5%;
+}
+
+.light_card.id2 {
+    padding-right: 2.5%;
+    padding-left: 2.5%;
+}
+
+.light_card.id3 {
+    padding-left: 5%;
+}
+
+.light_card_header {
+    font-size: 1.6vw;
+    margin-bottom: 0.7em;
+    text-align: left;
+    color: #5E5C6B;
+}
+
+.light_card_text {
+    font-size: 1vw;
+    line-height: 1.5;
+    text-align: left;
+}
+
+.dark_card {
+    padding: 15px;
+    /* display: inline-flex; */
+    float: left;
+    box-sizing: border-box;
+    border-radius: 5px;
+    background-color: #F6F7F6;
+    width: calc(33.33% - 1.75%);
+    margin-top: 50px;
+    box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.dark_card.id1 {
+    margin-right: 1.75%;
+}
+
+.dark_card.id2 {
+    margin-right: 0.875%;
+    margin-left: 0.857%;
+}
+
+.dark_card.id3 {
+    margin-left: 1.75%;
+}
+
+.dark_card .img {
+    background-image: url("https://picsum.photos/1000");
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin-left: auto;
+    margin-right: auto;
+    width: 90%;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+.dc1 .img.id1 {
+    background-image: url("img/spotify-party.png");
+}
+
+.dc1 .img.id2 {
+    background-image: url("img/pepper.png");
+}
+
+.dc1 .img.id3 {
+    background-image: url("img/mental-screen.png");
+}
+
+.dark_card_type {
+    font-family: "Roboto";
+    font-size: 0.9vw;
+    color: #A99FAB;
+    font-weight: 500;
+    margin-top: 2em;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+.dark_card_type:nth-of-type(5) {
+    margin-top: 0.5em !important;
+    text-align: right;
+}
+
+.dark_card_title {
+    font-size: 1.3vw;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 0.5em;
+    color: #5E5C6B;
+}
+
+.dark_card_text {
+    font-size: 1vw;
+    line-height: 1.5;
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 0.5em;
+}
+
+.dc2 .img.id1 {
+    background-image: url("img/megagon.png");
+}
+
+.dc2 .img.id2 {
+    background-image: url("img/shirt-manager.png");
+}
+
+.dc2 .img.id3 {
+    background-image: url("img/portfolio.png");
+}
+
+.left {
+    float: left;
+}
+
+.right {
+    float: right;
+}
+
+.big_image {
+    width: 60%;
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    border-radius: 5px;
+    box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+}
+
+.big_image_text_container {
+    width: 35%;
+}
+
+.big_image_text_header {
+    font-weight: 700;
+    font-size: 2em;
+}
+
+.big_image_text_text {
+    line-height: 1.5;
+    margin-top: 0.5em;
+    font-size: 1em;
+}
+
+.big_image_text_container.dark {
+    color: white;
+}
+
+.big_image_text_header.light {
+    color: #5E5C6B;
+}
+
+.big_image_text_image {
+    margin-top: 1em;
+    width: 100%;
+}
+
+.twitter-tweet {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
