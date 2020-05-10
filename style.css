@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&family=Roboto:wght@300;500&display=swap');
+
 html, body {
     margin: 0;
     padding: 0;
@@ -65,13 +67,51 @@ html, body {
     transform: translateY(-50%);
 }
 
+#header_ps {
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 20em;
+    width: 100%;
+    position: absolute;
+}
+
+#header_right_container {
+    margin-right: 8%;
+    right: 0;
+    position: absolute;
+    top: 50%;
+    opacity: 1 !important;
+    z-index: 242424;
+    transform: translateY(-15%);
+}
+
+#header_img {
+    width: 15em;
+    height: 15em;
+    border-radius: 5px;
+}
+
+#moving_image {
+    width: 15em;
+    height: 15em;
+    opacity: 0;
+    box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+    position: fixed;
+    background-position: center;
+    background-size: cover;
+    background-repeat: none;
+}
+
 .robotoheader {
-    font-family: 'Roboto Slab';
+    font-family: 'Roboto Slab', serif;
     font-weight: 700;
 }
 
 .roboto {
-    font-family: 'Roboto';
+    font-family: 'Roboto', sans-serif;
     font-weight: 300;
 }
 
@@ -202,7 +242,7 @@ html, body {
 }
 
 .dark_card_type {
-    font-family: "Roboto";
+    font-family: 'Roboto', sans-serif;
     font-size: 0.9vw;
     color: #A99FAB;
     font-weight: 500;

@@ -22,6 +22,7 @@
             <div id="top_bar_twitter"></div>
             <div id="top_bar_github_t" class="roboto">@morahman162</div>
         </div> -->
+        <div id="moving_image"></div>
         <div id="header">
             <div id="header_left_container">
                 <div id="header_title" class="robotoheader">
@@ -30,6 +31,16 @@
                 <div id="header_subtitle" class="roboto">
                     Coding portfolio
                 </div>
+            </div>
+        </div>
+        <div id="header_ps">
+            <div id="header_left_container">
+                <div id="header_title" class="robotoheader">
+                    Spotify Party
+                </div>
+            </div>
+            <div id="header_right_container">
+                <div id="header_img"></div>
             </div>
         </div>
         <div id="header_block"></div>
@@ -66,21 +77,21 @@
         <div class="section dark">
             <div class="row1">
                 <div class="dark_card dc1 id1" id="row2img">
-                    <a href="projects/spotify-party/"><div class="img id1"></div></a>
+                    <a><div data-href="projects/spotify-party/" class="img id1"></div></a>
                     <div class="dark_card_type">PROJECT</div>
                     <div class="dark_card_title robotoheader">Spotify Party</div>
                     <div class="dark_card_text roboto">A project incorporating the Spotify Web Player SDK and Web API to allow people to collectively play music together, live and in sync.</div>
                     <div class="dark_card_type">APRIL 2020</div>
                 </div>
                 <div class="dark_card dc1 id2">
-                    <a href="projects/pepper/"><div class="img id2"></div></a>
+                    <a><div data-href="projects/pepper/" class="img id2"></div></a>
                     <div class="dark_card_type">PROJECT</div>
                     <div class="dark_card_title robotoheader">Pepper</div>
                     <div class="dark_card_text roboto">Using Pepper (a humanoid) to achieve many things, from connecting to APIs such as the dictionary for answering questions to connecting to other hardware around Pepper in the network.</div>
                     <div class="dark_card_type">DECEMBER 2017</div>
                 </div>
                 <div class="dark_card dc1 id3">
-                    <a href="projects/mental-screen/"><div class="img id3"></div></a>
+                    <a><div data-href="projects/mental-screen/" class="img id3"></div></a>
                     <div class="dark_card_type">PROJECT</div>
                     <div class="dark_card_title robotoheader">Mental Screen</div>
                     <div class="dark_card_text roboto">In partnership with States of Minds, I created an app which tracks students' app usage and lets them compete with each other in teams, as an effort to look into social media detox.</div>
@@ -92,21 +103,21 @@
         <div class="section dark">
             <div class="row1">
                 <div class="dark_card dc2 id1" id="row2img">
-                    <a href="projects/megagon/"><div class="img id1"></div></a>
+                    <a><div data-href="projects/megagon/" class="img id1"></div></a>
                     <div class="dark_card_type">PROJECT</div>
                     <div class="dark_card_title robotoheader">Megagon</div>
                     <div class="dark_card_text roboto">Pushing Python Turtles to it's limits! I recorded my computer drawing a megagon (1,000,000 sided polygon). All 18hrs can be watched here!</div>
                     <div class="dark_card_type">MAY 2020</div>
                 </div>
                 <div class="dark_card dc2 id2">
-                    <a href="projects/shirt-manager/"><div class="img id2"></div></a>
+                    <a><div data-href="projects/shirt-manager/" class="img id2"></div></a>
                     <div class="dark_card_type">PROJECT</div>
                     <div class="dark_card_title robotoheader">Shirt Manager</div>
                     <div class="dark_card_text roboto">I'm very fond of shirts. I have so many I can never choose one! So, I created an app to manage all my shirts with NFC tag support, all linked to a MySQL database via an API.</div>
                     <div class="dark_card_type">DECEMBER 2019</div>
                 </div>
                 <div class="dark_card dc2 id3">
-                    <a href="projects/portfolio"><div class="img id3"></div></a>
+                    <a><div data-href="projects/portfolio" class="img id3"></div></a>
                     <div class="dark_card_type">PROJECT</div>
                     <div class="dark_card_title robotoheader">Portfolio</div>
                     <div class="dark_card_text roboto">This portfolio itself was no easy feat! It deserves a spot on my portfolio. I wanted this to be a design focused website to show all my work in a neat, organised manner.</div>
@@ -120,6 +131,10 @@
             var header = document.getElementById("header")
             var origMargin
             var origSize
+            var movingImageWidth
+            var movingImageHeight
+            var movingImageTop
+            var movingImageRight
             function setHeaderBlock() {
                 header_block.style.height = header.offsetHeight + "px"
             }
@@ -134,6 +149,11 @@
                 $("#top_bar_twitter").css('width', $("#top_bar_github").height()+"px")
                 $("#top_bar_twitter").css('height', ($("#top_bar_twitter").width() / 1.229822835)+"px")
                 // $("#top_bar_github").css('margin-top', (($("#top_bar").height() - $("#top_bar_github").height()) / 2)+"px")
+                movingImageHeight = $("#header_right_container").height()
+                movingImageWidth = $("#header_right_container").width()
+                movingImageTop = $("#header_right_container").offset().top
+                movingImageLeft = $("#header_right_container").offset().left
+                console.log(movingImageHeight, movingImageWidth, movingImageTop, movingImageLeft)
             }
 
             function doSizes() {

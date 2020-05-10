@@ -25,3 +25,33 @@ $(".dark_card .img").mouseout(function () {
         }, duration: 150
     })
 })
+
+// Click handlers
+$(".dark_card .img").click(function() {
+    console.log("C")
+    $("#moving_image").css("margin-top", $(this).offset().top - $(window).scrollTop())
+    $("#moving_image").css("margin-left", $(this).offset().left)
+    $("#moving_image").css("width", $(this).width())
+    $("#moving_image").css("height", $(this).height())
+    $("#moving_image").css("opacity", 1)
+    $("#moving_image").css("background-image", $(this).css("background-image"))
+    $(this).css("opacity", "1 !important")
+
+    var url = $(this).attr("data-href")
+
+    $("div:not(#moving_image)").animate({
+        opacity: 0
+    }, 150)
+
+    $("#moving_image").animate({
+        width: movingImageWidth,
+        height: movingImageHeight,  
+        marginTop: movingImageTop,
+        marginLeft: movingImageLeft
+    }, {
+        duration: 150,
+        complete: function() {
+            window.location.href = url
+        }
+    })
+})
