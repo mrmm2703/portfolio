@@ -1,0 +1,23 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "projects\\spotify-party"
+		},
+		{
+			"path": "projects\\megagon"
+		},
+		{
+			"path": "projects\\pepper"
+		},
+		{
+			"path": "projects\\mental-screen"
+		},
+		{
+			"path": "projects\\shirt-manager"
+		}
+	],
+	"settings": {}
+}
