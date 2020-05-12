@@ -125,6 +125,36 @@
                 </div>
             </div>
         </div>
+
+        <div class="section light">
+            <div class="row1">
+                <div class="light_card id1">
+                    <div class="light_card_header robotoheader stat">
+                        <div class="stat_image" style="background-image: url('img/binary.svg');"></div>
+                        <div class="stat_header">Lines coded
+                            <div class="roboto" id ="lines_coded">14,242</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="light_card id2">
+                    <div class="light_card_header robotoheader stat">
+                        <div class="stat_image" style="background-image: url('img/time.svg');"></div>
+                        <div class="stat_header">Coding time
+                            <div class="roboto" id="coding_time">15hrs <b class="roboto" style="font-size: 1vw">this week</b></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="light_card id3">
+                    <div class="light_card_header robotoheader stat">
+                        <div class="stat_image" style="background-image: url('img/recent.svg');"></div>
+                        <div class="stat_header">Last project
+                            <div class="roboto">Portfolio</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
     </body>
     <script>
             var header_block = document.getElementById("header_block")
@@ -135,6 +165,24 @@
             var movingImageHeight
             var movingImageTop
             var movingImageRight
+
+            function numberWithCommas(x) {
+                return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            }
+
+            $.getJSON("stats.json", function(data) {
+                var time = data["coding_time_week"]
+                if (time < 60000) {
+                    time = numberWithCommas(Math.trunc(time / 1000)) + "sec"
+                } else if (time < 3600000) {
+                    time = numberWithCommas(Math.trunc(time / 60000)) + "min"
+                } else {
+                    time = numberWithCommas(Math.trunc(time / 3600000)) + "hrs"
+                }
+                $("#lines_coded").html(numberWithCommas(data["total_lines"]))
+                $("#coding_time").html(time + " <b class=\"roboto\" style=\"font-size: 1vw\">this week</b>")
+            })
+
             function setHeaderBlock() {
                 header_block.style.height = header.offsetHeight + "px"
             }
@@ -148,6 +196,9 @@
                 $("#top_bar_github").css('width', $("#top_bar_github").height()+"px")
                 $("#top_bar_twitter").css('width', $("#top_bar_github").height()+"px")
                 $("#top_bar_twitter").css('height', ($("#top_bar_twitter").width() / 1.229822835)+"px")
+                console.log($(".light_card_header.stat").height() + "PPPPP")
+                $(".stat_image").css('width', $(".light_card_header.stat").height()/2+"px")
+                $(".stat_image").css('height', $(".light_card_header.stat").height()/2+"px")
                 // $("#top_bar_github").css('margin-top', (($("#top_bar").height() - $("#top_bar_github").height()) / 2)+"px")
                 movingImageHeight = $("#header_right_container").height()
                 movingImageWidth = $("#header_right_container").width()

@@ -103,6 +103,7 @@ html, body {
     background-position: center;
     background-size: cover;
     background-repeat: none;
+    display: none;
 }
 
 .robotoheader {
@@ -282,4 +283,18 @@ html, body {
 
 .dc2 .img.id3 {
     background-image: url("img/portfolio.png");
+}
+
+.stat_image {
+    display: inline-block;
+}
+
+.stat_header {
+    display: inline-block;
+    margin-bottom: 0;
+    margin-left: 20px;
+}
+
+.light_card_header.stat {
+    margin: 0 !important;
 }

@@ -34,6 +34,7 @@ $(".dark_card .img").click(function() {
     $("#moving_image").css("width", $(this).width())
     $("#moving_image").css("height", $(this).height())
     $("#moving_image").css("opacity", 1)
+    $("#moving_image").css("display", "block")
     $("#moving_image").css("background-image", $(this).css("background-image"))
     $(this).css("opacity", "1 !important")
 
