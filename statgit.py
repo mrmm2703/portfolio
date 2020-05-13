@@ -104,7 +104,7 @@ while True:
         data["total_lines"] = total_lines
     
     # Get the last project
-    times = sorted(times, key=lambda x: x[0])
+    times = sorted(times, key=lambda x: x[0], reverse=True)
     last_project = times[0][1]
     data["last_project"] = last_project
 
