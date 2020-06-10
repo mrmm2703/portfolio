@@ -17,6 +17,9 @@
 		},
 		{
 			"path": "projects\\shirt-manager"
+		},
+		{
+			"path": "projects\\spotify-party-mobile"
 		}
 	],
 	"settings": {}

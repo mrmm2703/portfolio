@@ -15,7 +15,8 @@ repos = [
     "spotify-party",
     "mental-screen",
     "pepper-project",
-    "portfolio"
+    "portfolio",
+    "spotify-party-mobile"
 ]
 
 while True:
@@ -117,4 +118,4 @@ while True:
     print("------------------------------------")
     print("               WAIT")
     print("------------------------------------")
-    time.sleep(300)
+    time.sleep(30*60)

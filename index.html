@@ -126,13 +126,25 @@
             </div>
         </div>
 
+        <div class="section dark">
+            <div class="row1">
+                <div class="dark_card dc2 id1" id="row2img">
+                    <a><div data-href="projects/spotify-party-mobile" class="img id1"  style="background-image: url('img/spotify-party-mobile.png');"></div></a>
+                    <div class="dark_card_type">PROJECT</div>
+                    <div class="dark_card_title robotoheader">Spotify Party Mobile</div>
+                    <div class="dark_card_text roboto">Not everyone would want to use their computers to listen to music with friends. People would rather use phones, so I created a cross-platform app using React Native.</div>
+                    <div class="dark_card_type">MAY 2020</div>
+                </div>
+            </div>
+        </div>
+
         <div class="section light">
             <div class="row1">
                 <div class="light_card id1">
                     <div class="light_card_header robotoheader stat">
                         <div class="stat_image" style="background-image: url('img/binary.svg');"></div>
                         <div class="stat_header">Lines coded
-                            <div class="roboto" id ="lines_coded">14,242</div>
+                            <div class="roboto" id ="lines_coded">Counting...</div>
                         </div>
                     </div>
                 </div>
@@ -140,7 +152,7 @@
                     <div class="light_card_header robotoheader stat">
                         <div class="stat_image" style="background-image: url('img/time.svg');"></div>
                         <div class="stat_header">Coding time
-                            <div class="roboto" id="coding_time">15hrs <b class="roboto" style="font-size: 1vw">this week</b></div>
+                            <div class="roboto" id="coding_time">Timing...<b class="roboto" style="font-size: 1vw">this week</b></div>
                         </div>
                     </div>
                 </div>
@@ -148,7 +160,7 @@
                     <div class="light_card_header robotoheader stat">
                         <div class="stat_image" style="background-image: url('img/recent.svg');"></div>
                         <div class="stat_header">Last project
-                            <div class="roboto">Portfolio</div>
+                            <div class="roboto" id="last_project">Checking...</div>
                         </div>
                     </div>
                 </div>
@@ -170,6 +182,14 @@
                 return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
             }
 
+            function titleCase(str) {
+                var splitStr = str.toLowerCase().split(' ');
+                for (var i = 0; i < splitStr.length; i++) {
+                    splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1);     
+                }
+                return splitStr.join(' '); 
+            }
+
             $.getJSON("stats.json", function(data) {
                 var time = data["coding_time_week"]
                 if (time < 60000) {
@@ -181,6 +201,7 @@
                 }
                 $("#lines_coded").html(numberWithCommas(data["total_lines"]))
                 $("#coding_time").html(time + " <b class=\"roboto\" style=\"font-size: 1vw\">this week</b>")
+                $("#last_project").html(titleCase(data["last_project"]))
             })
 
             function setHeaderBlock() {

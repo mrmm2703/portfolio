@@ -52,7 +52,7 @@ html, body {
 
 #header {
     background: url("./img/header.jpg");
-    background-position: bottom;
+    background-position: center;
     background-repeat: no-repeat;
     top: 0;
     left: 0;
@@ -82,7 +82,7 @@ html, body {
 #header_img {
     width: 15em;
     height: 15em;
-    background-image: url("../../img/pepper.png");
+    background-image: url("../../img/spotify-party-mobile.png");
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
@@ -172,11 +172,6 @@ html, body {
 
 .row1 {
     padding-top: 2.5%;
-    padding-bottom: calc(2.5% + 50px);
-}
-
-.row1.top_row {
-    padding-top: 2.5%;
     padding-bottom: 2.5%;
 }
 
@@ -222,24 +217,6 @@ html, body {
     width: calc(33.33% - 1.75%);
     margin-top: 50px;
     box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
-}
-
-.multi {
-    padding: 0 !important;
-    background-color: transparent;
-    border-radius: 0;
-    box-shadow: none;
-}
-
-.row11 {
-    width: 100%;
-    display: block;
-    margin-top: 0 !important;
-}
-
-.row22 {
-    width: 100%;
-    display: block;
 }
 
 .dark_card.id1 {
@@ -331,16 +308,16 @@ html, body {
 }
 
 .big_image {
-    width: 60%;
+    width: 30%;
     background-size: cover;
     background-position: top;
     background-repeat: no-repeat;
     border-radius: 5px;
-    box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2);
+    /* box-shadow: 0 16px 38px -12px rgba(0, 0, 0, 0.56), 0 4px 25px 0px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2); */
 }
 
 .big_image_text_container {
-    width: 35%;
+    width: 65%;
 }
 
 .big_image_text_header {
@@ -364,7 +341,8 @@ html, body {
 
 .big_image_text_image {
     margin-top: 1em;
-    width: 100%;
+    width: 80%;
+    margin-left: 10%;
 }
 
 .twitter-tweet {
