@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Shirt Manager</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <meta name="twitter:widgets:border-color" content="#ffffff">
+        <!-- Global site tag (gtag.js) - Google Analytics -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-165942289-1"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script>           
+            let drop = true;
+            function dropOne() {
+                if (drop) {
+                    console.log("RAN");
+                    var myDrop = $('.container').clone();
+                    $('.container').remove();
+                    $('body').append(myDrop);
+                    setTimeout(dropOne, 1000);
+                } else {
+                    console.log("DONE")
+                }
+            }
+
+            dropOne()
+        </script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag(){dataLayer.push(arguments);}
+            gtag('js', new Date());
+
+            gtag('config', 'UA-165942289-1');
+        </script>
+    </head>
+    <body>
+        <div class="container">  
+      
+            <div class="drop"></div>
+            <div class="drop"></div>
+      
+            <div class="puddle">
+              <div class="sink"></div>
+              <div class="ripple"></div>
+              <div class="ripple"></div>
+            
+              <div class="ripple"></div>
+              <div class="sink"></div>
+              <div class="ripple"></div>
+              
+            </div>
+            
+            <div class="drop"></div>
+            <div class="drop"></div>      
+          </div>
+        <div id="background"></div>
+        <div id="subBlock"></div>
+        <div id="subContainer">
+            <div id="title" class="robotoheader">UI Development</div>
+        </div>
+    </body>
+
+    <script>
+        let vHeight = $("#background").height();
+        let percentScrolled = 0.0;
+        let subHeight = $("#subContainer").height();
+        let scrollRange;
+        let scrollPos = 0.0;
+
+        window.onload = function() {
+            $(".container").fadeOut(500);
+            $("#background").delay(500).animate({opacity: 1, width: "110%", height: "110%", marginLeft: "-5%", marginTop: "-5%"}, 500);
+            vHeight = $("#background").height();
+            subHeight = $("#subContainer").height();
+            scrollRange = subHeight;
+            console.log("OFFING NOW");
+            drop = false;
+        }
+
+        $(window).scroll(function() {
+            scrollPos = $(window).scrollTop();
+            if (scrollPos == 0) {
+                percentScrolled = 0.0;
+            } else {
+                console.log("VAL1: " + scrollPos.toString());
+                console.log("VAL2: " + scrollRange.toString());
+                percentScrolled = scrollPos / scrollRange;
+            }
+            $("#background").stop();
+            let k1 = 110 - (10 * percentScrolled);
+            k1 = k1.toString() + "%";
+            let k2 = -5 + (5 * percentScrolled);
+            k2 = k2.toString() + "%";
+            $("#background").animate({opacity: 1-(percentScrolled/2.3), height: k1, width: k1, marginTop: k2, marginLeft: k2}, 5);
+            console.log(percentScrolled);
+        })
+
+        $(window).resize(function() {
+            vHeight = $("#background").height();
+            subHeight = $("#subContainer").height();
+            scrollRange = subHeight;
+        })
+    </script>
+
+    <script>
+        $("body").click(function() {
+            var drop = $('.container').clone();
+            $('.container').remove();
+            $('body').append(drop);
+        });
+  
+
+        /*<![CDATA[*/
+        function customizeTweet() {
+        
+            if (document.getElementById("twitter-widget-0")) {
+        
+                var maxTweets = 1;
+        
+                for (i = 0; i < maxTweets; i++) {
+        
+                    if (document.getElementById("twitter-widget-" + i)) {
+                        var isChromium = window.chrome;
+                        var winNav = window.navigator;
+                        var vendorName = winNav.vendor;
+                        var isOpera = typeof window.opr !== "undefined";
+                        var isIEedge = winNav.userAgent.indexOf("Edge") > -1;
+                        var isIOSChrome = winNav.userAgent.match("CriOS");
+                        var isSafari6Plus = !!navigator.userAgent.match(/safari/i) && !navigator.userAgent.match(/chrome/i) && typeof document.body.style.webkitFilter !== "undefined";
+                        var tweetCSS = '.EmbeddedTweet{height:auto !important;border:none !important; background-color: #F6F7F6 !important; margin-top: 0 !important; margin-bottom: 0 !important}';
+                        var tweetStyle = document.createElement("style");
+        
+                        tweetStyle.setAttribute("id", "tweet-style-" + i);
+                        tweetStyle.innerHTML = tweetCSS;
+                        tweetStyle.type = "text/css";
+        
+                        if ((isIOSChrome) || (isChromium !== null && typeof isChromium !== "undefined" && vendorName === "Google Inc." && isIEedge === false) || (isOpera === true) || (isSafari6Plus)) {
+        
+                            var styleTag = document.getElementById("twitter-widget-" + i).shadowRoot;
+                            styleTag.insertBefore(tweetStyle, styleTag.childNodes[0]);
+                        } else {
+        
+                            var tweetWidget = document.getElementById("twitter-widget-" + i).contentDocument;
+                            tweetWidget.head.appendChild(tweetStyle);
+                        }
+                    } else break;
+                }
+            }
+        }
+        
+        function addLoadEvent(func) {
+            var oldonload = window.onload;
+            if (typeof window.onload != 'function') {
+                window.onload = func;
+            } else {
+                window.onload = function() {
+                    if (oldonload) {
+                        oldonload();
+                    }
+                    func();
+                }
+            }
+        }
+        
+        addLoadEvent(customizeTweet);
+        /*]]>*/
+    </script>
+</html>

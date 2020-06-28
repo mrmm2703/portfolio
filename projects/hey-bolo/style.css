@@ -1,0 +1,250 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&family=Roboto:wght@300;500&display=swap');
+
+a {
+    text-decoration: none;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+}
+
+#background {
+    background-image: url("img/background.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: fixed;
+    opacity: 0;
+    width: 150%;
+    height: 0%;
+    margin-left: -25%;
+    margin-top: 0%;
+}
+
+#subContainer {
+    position: absolute;
+    margin-top: 100vh;
+    width: 100%;
+    height: 30%;
+    background: rgb(94,92,107);
+    /* background: linear-gradient(0deg, rgba(94,92,107,1) 0%, rgba(255,255,255,0) 100%); */
+}
+
+.robotoheader {
+    font-family: 'Roboto Slab', serif;
+    font-weight: 700;
+}
+
+.roboto {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+}
+
+#title {
+    position: absolute;
+    bottom: 1em;
+    left: 1em;
+    font-size: 4em;
+    color: white;
+}
+
+/* WATER DROP */
+.footer {
+    position: absolute;
+    display: block;
+    margin: auto;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    top:90%; bottom:0; right:0; left:0;
+    font-family: sans-serif;
+    font-size: 18px;
+    color: #36C1D6;
+  }
+  .container {
+    position: fixed;
+    display: block;
+    width: 100%;
+    height: 100%;
+    /* background-color: #70ECFF; */
+    background-color: white;
+    z-index: 999;
+  }
+  
+  .drop {
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    margin: auto;
+    top:0px; bottom:0; right:0; left:0;
+    background-color: #36C1D6;
+    border-radius: 50% 1px 50% 50%;
+    -webkit-transform: rotate(-45deg);  
+    -webkit-animation: drip 0.4s linear;
+  }
+   .drop:nth-child(2) {  
+    border-radius: 50%;
+    -webkit-transform: rotate(0deg);
+    -webkit-animation: bounce 0.55s 0.8s linear;
+  } 
+  .drop:nth-child(4) {  
+    border-radius: 50%;
+    -webkit-transform: rotate(45deg);
+    -webkit-animation: splash-right 0.55s 1.2s linear;
+  }
+  .drop:nth-child(5) {  
+    border-radius: 50%;
+    -webkit-transform: rotate(45deg);
+    -webkit-animation: splash-left 0.55s 1.2s linear;
+  }
+  
+  .sink {
+    position: absolute;
+    opacity: 1; 
+    width: 0px;
+    height: 0px;
+    margin: auto;
+    top:0; bottom:0; right:0; left:0;
+    background-color: #36C1D6;
+    border-radius: 50%;
+    -webkit-animation: sink 0.6s 0.35s ease-out;
+  }  
+  .sink:nth-child(5) {    
+    -webkit-animation: sink 0.5s 1.3s ease-out;
+  }
+        
+  .ripple { 
+    position: absolute;
+    opacity: 0;
+    width: 0px;
+    height: 0px;
+    margin: auto;
+    top:0; bottom:0; right:0; left:0;
+    border: #36C1D6 solid 1px;
+    border-radius: 50%;
+    -webkit-animation: ripple 0.55s 0.4s linear;
+  }
+  .ripple:nth-child(2) {
+    -webkit-animation: ripple 0.55s 0.6s linear;
+  }
+  .ripple:nth-child(3) {
+    -webkit-animation: ripple 0.55s 1.2s linear;
+  }  
+  .ripple:nth-child(7) {
+    -webkit-animation: ripple 0.55s 1.4s linear;
+  }  
+  
+  
+  @-webkit-keyframes drip {
+   0% {
+      width: 0px;
+      height: 0px;
+      top: -300px;
+    }
+    50% {
+      width: 20px;
+      height: 20px;
+      top: -100px;
+    }
+    100% { 
+      width: 20px;
+      height: 20px; 
+      top: 10px;
+    }
+  }
+   
+  @-webkit-keyframes bounce {
+   0% {
+      width: 0px;
+      height: 0px;
+      top: 10px;
+    }
+    40% {
+      width: 10px;
+      height: 10px;
+      top: -100px;
+    } 
+    100% {
+      width: 10px;
+      height: 10px; 
+      top: 0px;
+    }
+  } 
+  @-webkit-keyframes splash-right {
+   0% {
+     opacity: 1;
+      width: 0px;
+      height: 0px;
+      top: 10px;
+    }
+    60% {
+      opacity: 1;
+      width: 6px;
+      height: 6px;
+      top: -80px;
+      left: 50px;
+    }
+    100% {
+      opacity: 0;
+      width: 6px;
+      height: 6px;
+      top: -70px;
+      left: 80px;
+    }
+  }
+  @-webkit-keyframes splash-left {
+   0% {
+     opacity: 1;
+      width: 0px;
+      height: 0px;
+      top: 10px;
+    }
+    60% {
+      opacity: 1;
+      width: 6px;
+      height: 6px;
+      top: -60px;
+      left: -50px;
+    }
+    100% {
+      opacity: 0;
+      width: 6px;
+      height: 6px;
+      top: -40px;
+      left: -80px;
+    }
+  }
+  
+  @-webkit-keyframes sink {
+    0% {
+      opacity: 1;
+      width: 0px;
+      height: 0px;
+    }
+    50% {
+      opacity: 1;
+      width: 40px; 
+      height: 10px;
+    }
+    100% {
+      opacity: 0; 
+      width: 0px; 
+      height: 0px;
+    }
+  }
+  
+  @-webkit-keyframes ripple {
+    0% {
+      opacity: 1;
+      width: 60px;
+      height:10px;
+    }
+    100% {
+      opacity: 0; 
+      width: 200px;  
+      height: 20px;
+    }
+  }
+  
+  
