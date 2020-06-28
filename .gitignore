@@ -2,3 +2,4 @@ stats.json
 api_key.py
 *.csv
 __pycache__/api_key.cpython-38.pyc
+*.pyc
