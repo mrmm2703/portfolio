@@ -51,7 +51,12 @@
             <div class="drop"></div>
             <div class="drop"></div>      
           </div>
+
+
         <div id="background"></div>
+        <div id="header" class="robotoheader">
+            HeyBolo!
+        </div>
         <div id="subBlock"></div>
         <div id="subContainer">
             <div id="title" class="robotoheader">UI Development</div>
@@ -65,14 +70,25 @@
         let scrollRange;
         let scrollPos = 0.0;
 
+        function peeker() {
+            if (scrollPos == 0.0) {
+                if (drop == false) {
+                    $("html, body").animate({scrollTop: 50}, 150).delay(300).animate({scrollTop: 0}, 150);
+                }
+            }
+        }
+
         window.onload = function() {
             $(".container").fadeOut(500);
             $("#background").delay(500).animate({opacity: 1, width: "110%", height: "110%", marginLeft: "-5%", marginTop: "-5%"}, 500);
+            $("#header").delay(1200).animate({top: "30%", fontSize: "20vh", opacity: 0.8}, 500);
+            $("html, body").delay(2200).animate({scrollTop: 50}, 150).delay(300).animate({scrollTop: 0}, 150);
             vHeight = $("#background").height();
             subHeight = $("#subContainer").height();
             scrollRange = subHeight;
             console.log("OFFING NOW");
-            drop = false;
+            drop = false
+            setInterval(peeker, 10000)
         }
 
         $(window).scroll(function() {
@@ -90,6 +106,8 @@
             let k2 = -5 + (5 * percentScrolled);
             k2 = k2.toString() + "%";
             $("#background").animate({opacity: 1-(percentScrolled/2.3), height: k1, width: k1, marginTop: k2, marginLeft: k2}, 5);
+            $("#header").animate({fontSize: (20-(5*percentScrolled)).toString()+"vh", opacity: 0.8+(0.2*percentScrolled), top: (30+(0.5*percentScrolled*100)).toString()+"%"}, 5);
+            $("#title").animate({fontSize: (3+(2*percentScrolled)).toString()+"vh"}, 5);
             console.log(percentScrolled);
         })
 
