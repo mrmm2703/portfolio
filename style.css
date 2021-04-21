@@ -212,10 +212,24 @@ html, body {
     margin-left: 5%;
 }
 
-.feature.img {
+.feat-img-cont {
     height: 300px;
     width: 300px;
 }
+
+.feat-img-cont .img {
+    height: 90%;
+    width: 90%;
+}
+
+.feat-content {
+    display: grid;
+    grid-template-columns: 300px 1fr;
+    grid-template-rows: 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      ". .";
+  }
 
 .img {
     background-image: url("https://picsum.photos/1000");
