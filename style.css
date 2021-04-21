@@ -212,7 +212,12 @@ html, body {
     margin-left: 5%;
 }
 
-.dark_card .img {
+.feature.img {
+    height: 300px;
+    width: 300px;
+}
+
+.img {
     background-image: url("https://picsum.photos/1000");
     transition: box-shadow 0.15s;
     background-size: cover;

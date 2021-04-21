@@ -1,5 +1,5 @@
 // Hover handlers
-$(".dark_card .img").mouseover(function () {
+$(".img").mouseover(function () {
     $(this).stop()
     $(this).animate({
         width: "95%"
@@ -13,7 +13,7 @@ $(".dark_card .img").mouseover(function () {
         }, duration: 150
     })
 })
-$(".dark_card .img").mouseout(function () {
+$(".img").mouseout(function () {
     $(this).stop()
     $(this).animate({
         width: "90%"
@@ -27,7 +27,7 @@ $(".dark_card .img").mouseout(function () {
 })
 
 // Click handlers
-$(".dark_card .img").click(function() {
+$(".img").click(function() {
     console.log("C")
     $("#moving_image").css("margin-top", $(this).offset().top - $(window).scrollTop())
     $("#moving_image").css("margin-left", $(this).offset().left)

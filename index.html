@@ -74,6 +74,7 @@
             </div>
         </div>
 
+
         <div class="section dark">
             <div class="row1">
                 <div class="dark_card dc1 id1" id="row2img">
@@ -97,6 +98,12 @@
                     <div class="dark_card_text roboto">In partnership with States of Minds, I created an app which tracks students' app usage and lets them compete with each other in teams, as an effort to look into social media detox.</div>
                     <div class="dark_card_type">FEBRUARY 2020</div>
                 </div>
+            </div>
+        </div>
+
+        <div class="section light">
+            <div class="row1">
+                <a><div data-href="projects/megagon/" class="img feature" style="background-image: url('img/mental-screen.png')"></div></a>
             </div>
         </div>
 
@@ -191,17 +198,19 @@
             }
 
             $.getJSON("stats.json", function(data) {
-                var time = data["coding_time_week"]
-                if (time < 60000) {
-                    time = numberWithCommas(Math.trunc(time / 1000)) + "sec"
-                } else if (time < 3600000) {
-                    time = numberWithCommas(Math.trunc(time / 60000)) + "min"
-                } else {
-                    time = numberWithCommas(Math.trunc(time / 3600000)) + "hrs"
-                }
-                $("#lines_coded").html(numberWithCommas(data["total_lines"]))
-                $("#coding_time").html(time + " <b class=\"roboto\" style=\"font-size: 1vw\">this week</b>")
-                $("#last_project").html(titleCase(data["last_project"]))
+                $.get("https://morahman.me:8080/portfolio/api/time/coding", (d) => {
+                    let time = parseInt(d["data"]["time"]) * 1000
+                    if (time < 60000) {
+                        time = numberWithCommas(Math.trunc(time / 1000)) + "sec"
+                    } else if (time < 3600000) {
+                        time = numberWithCommas(Math.trunc(time / 60000)) + "min"
+                    } else {
+                        time = numberWithCommas(Math.trunc(time / 3600000)) + "hrs"
+                    }
+                    $("#lines_coded").html(numberWithCommas(data["total_lines"]))
+                    $("#coding_time").html(time + " <b class=\"roboto\" style=\"font-size: 1vw\">this week</b>")
+                    $("#last_project").html(titleCase(data["last_project"]))
+                })                
             })
 
             function setHeaderBlock() {
