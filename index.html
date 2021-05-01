@@ -210,7 +210,7 @@
             }
 
             $.getJSON("stats.json", function(data) {
-                $.get("https://morahman.me:8080/portfolio/api/time/coding", (d) => {
+                $.get("https://morahman.me/portfolio/get_time.php", (d) => {
                     let time = parseInt(d["data"]["time"]) * 1000
                     if (time < 60000) {
                         time = numberWithCommas(Math.trunc(time / 1000)) + "sec"
